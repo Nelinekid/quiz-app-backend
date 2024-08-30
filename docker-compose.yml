@@ -7,5 +7,5 @@ services:
       - "5434:5434"
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=2323
+      - POSTGRES_PASSWORD=gorm
       - POSTGRES_DB=quizzo

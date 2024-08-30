@@ -12,7 +12,7 @@ var DB *gorm.DB
 
 // Connect to PostgreSQL database and return the connection object
 func Connect() {
-	db, err := gorm.Open(postgres.Open("postgres://postgres:2323@localhost:5432/quizzo"), &gorm.Config{})
+	db, err := gorm.Open(postgres.Open("postgres://postgres:gorm2037@localhost:5432/quizzo"), &gorm.Config{})
 	if err != nil {
 		fmt.Println("Failed to connect to database server:", err)
 		return
@@ -35,7 +35,7 @@ func Connect() {
     }
 
 	// Connect to the new database
-	dsnWithDB := fmt.Sprintf("host=localhost user=postgres password=2323 dbname=%s sslmode=disable", dbName)
+	dsnWithDB := fmt.Sprintf("host=localhost user=postgres password=gorm2037 dbname=%s sslmode=disable", dbName)
 	db, err = gorm.Open(postgres.Open(dsnWithDB), &gorm.Config{})
 	if err != nil {
 		fmt.Println("Failed to connect to the specific database:", err)
