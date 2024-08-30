@@ -26,7 +26,7 @@ func GetUsers(c *gin.Context) {
 func GetUser(c *gin.Context) {
 	user := []models.User{}
 
-	if err := config.DB.Where("id = ?", c.Param("id")).Find(&user).Error; err != nil {
+	if err := config.DB.Where("user_name = ?", c.Param("user_name")).Find(&user).Error; err != nil {
 		c.JSON(http.StatusNotFound, gin.H{"error": "User not found"})
 		return
 	}
