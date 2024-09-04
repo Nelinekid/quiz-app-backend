@@ -8,9 +8,9 @@ import (
 type User struct {
 	gorm.Model
 	ID       uuid.UUID `gorm:"type:uuid;primary_key;default:uuid_generate_v4()"` // or `default:gen_random_uuid()`
-	UserName string    `json:"name"`
-	Email    string    `json:"email"`
-	Password string    `json:"password"`
+	UserName string    `json:"name" gorm:"unique;not null"`
+	Email    string    `json:"email" gorm:"unique;not null"`
+	Password string    `json:"password" gorm:"not null"`
 }
 
 type Score struct {
