@@ -6,6 +6,6 @@ services:
     ports:
       - "5434:5434"
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=gorm
-      - POSTGRES_DB=quizzo
+      DEBUG: "true"
+    env_file: ".env"
+    
